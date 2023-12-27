@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.File;
 class Kullanici extends TemelBilgi implements ElestiriArayuzu {
+    class ProfilBilgisi{
+
+    }
     private static final String DOSYA_ADI = "kullanicilar.txt";
 
     public boolean girisYap(String id, String parola) {
@@ -25,7 +28,6 @@ class Kullanici extends TemelBilgi implements ElestiriArayuzu {
 
     public boolean kayitOl(String id, String parola) {
         try (FileWriter writer = new FileWriter(DOSYA_ADI, true)) {
-            // Yeni kullanıcıyı dosyaya ekle
             writer.write(id + " " + parola + "\n");
             return true;
         } catch (IOException e) {
